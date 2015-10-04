@@ -6,13 +6,14 @@
 	+bgImg('bg-salad-1.jpg')
 	+bgFade(black, .25)
 
+	//overflow: hidden
+
 
 .hero__content
 	+flex(col)
 	align-items: center
 	color: white
 	line-height: 1
-	//background-color: steelblue
 	min-height: 50vh
 	position: relative
 
@@ -20,15 +21,45 @@
 	font-size: 5rem
 	font-weight: 400
 
+	+large
+		font-size: 7rem
 
 .hero__subHeader
+	+flex
 	font-size: 1.4rem
 	font-weight: 300
 	margin-left: 3rem
+	transform: translateY(100%)
+	opacity: 0
+	animation: hero__subHeader-flyUpIn 1.05s 25ms 1 forwards cubic-bezier(0.470, 0.000, 0.745, 0.715)
 
+	+large
+		font-size: 1.8rem
+
+@keyframes hero__subHeader-flyUpIn
+	0%
+		transform: translateY(100%)
+	100%
+		transform: translateY(0%)
+		opacity: 1
 
 .hero__btn-continue
-	position: absolute
-	bottom: 0
-	left: 50%
-	transform: translateX(-50%)
+	+flex
+	font-size: 3.5rem
+	margin-top: 40%
+	transform: translateY(0%)
+	opacity: 0
+	animation: hero__btn-continue 2.25s 1.35s infinite cubic-bezier(0.550, 0.085, 0.680, 0.530)
+
+	+large
+		font-size: 4.5rem
+@keyframes hero__btn-continue
+	0%
+		opacity: 0
+		transform: translateY(0%)
+	75%
+		opacity: 0.6
+		transform: translateY(150%) scale(1.1)
+	100%
+		opacity: 0
+		transform: translateY(150%) scale(.25)
