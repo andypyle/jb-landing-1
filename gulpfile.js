@@ -40,7 +40,8 @@ var sources = {
     'out':'./src/site/js'
   },
   'img':{
-    'in':'./src/img/**/*'
+    'in':'./src/img/**/*',
+    'out':'./src/site/img'
   },
   'build':{
     'css':'./build/styles',
@@ -56,7 +57,8 @@ gulp.task('browsersync', function(){
     browserSync.init({
         server: './src/site',
         notify: false,
-        open: false
+        open: false,
+        injectChanges: true
     });
 
     gulp.watch('./src/sass/**/*.sass', ['sass']);
@@ -90,7 +92,7 @@ gulp.task('sass', function(){
     .pipe(concat('style.min.css'))
     .pipe(gulp.dest(sources.sass.out))
     .pipe(gulp.dest(sources.build.css))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 
@@ -146,7 +148,8 @@ gulp.task('jshint', function() {
 gulp.task('images', function() {
     gulp.src(sources.img.in)
         .pipe(imagemin())
-        .pipe(gulp.dest(sources.build.img));
+        .pipe(gulp.dest(sources.build.img))
+        .pipe(gulp.dest(sources.img.out));
 });
 
 

@@ -1,0 +1,34 @@
+// Hero image section styles.
+.hero
+	+flex(center)
+	min-height: 100vh
+
+	+bgImg('bg-salad-1.jpg')
+	+bgFade(black, .25)
+
+
+.hero__content
+	+flex(col)
+	align-items: center
+	color: white
+	line-height: 1
+	//background-color: steelblue
+	min-height: 50vh
+	position: relative
+
+.hero__header
+	font-size: 5rem
+	font-weight: 400
+
+
+.hero__subHeader
+	font-size: 1.4rem
+	font-weight: 300
+	margin-left: 3rem
+
+
+.hero__btn-continue
+	position: absolute
+	bottom: 0
+	left: 50%
+	transform: translateX(-50%)
