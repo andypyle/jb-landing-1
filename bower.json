@@ -1,0 +1,23 @@
+{
+  "name": "jbLanding1",
+  "version": "0.0.0",
+  "homepage": "https://github.com/andypyle/jb-landing-1",
+  "authors": [
+    "Andrew Pyle <andy.pyle@gmail.com>"
+  ],
+  "description": "First version of new JillBee landing page.",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "./src/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "velocity": "~1.2.2"
+  }
+}
